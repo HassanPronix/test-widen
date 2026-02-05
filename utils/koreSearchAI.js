@@ -22,12 +22,10 @@ const UPLOAD_ENDPOINTS = ["/api/public/uploadfile"];
 async function uploadFileToKore(fileBuffer, filename) {
 
   console.log('-------upload-------')
-  const config = await readConfig();
-  const koreHost =
-    process.env.KORE_HOST || config.kore?.host || "https://platform.kore.ai";
+ 
+  const koreHost =    process.env.KORE_HOST 
   const botId = process.env.KORE_BOT_ID;
-  const sourceId = process.env.KORE_SOURCE_ID;
-  const uploadTimeout = config.kore?.uploadTimeout || 180000;
+  const uploadTimeout = 180000;
 
   if (!botId) {
     throw new Error(
@@ -138,12 +136,10 @@ function extractFileId(data) {
 async function ingestFilesToKore(fileIds, sourceName) {
 
   console.log('-------ingestion ------')
-  const config = await readConfig();
-  const koreHost =
-    process.env.KORE_HOST || config.kore?.host || "https://platform.kore.ai";
+  const koreHost = process.env.KORE_HOST
   const botId = process.env.KORE_BOT_ID;
   const defaultSourceName =
-    process.env.SEARCHAI_SOURCE_NAME || config.kore?.sourceName || "JBL_WIDEN";
+    process.env.SEARCHAI_SOURCE_NAME
 
   if (!botId) {
     throw new Error("KORE_BOT_ID environment variable is required");

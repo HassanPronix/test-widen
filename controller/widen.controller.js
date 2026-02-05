@@ -26,7 +26,10 @@ const { validateKoreEnvVars } = require("../utils/koreAuth");
 const { processWithConcurrency } = require("../utils/concurrency");
 const { splitPdfBySize } = require('../utils/splitPdf')
 const { readWidenState, writeWidenState } = require('../utils/widenAsset')
-const { appendErrorRow } = require('../utils/errorExcelLogger')
+const { appendErrorRow } = require('../utils/errorExcelLogger');
+const AssetError = require('../model/asset.model');
+const { createExcelFile } = require('../utils/createExcel');
+const { sendEmailWithAttachment } = require('../utils/sendEmail');
 
 // Max file size for Kore.ai upload (in MB) - can be overridden via env
 const MAX_FILE_SIZE_MB = parseInt(
@@ -87,9 +90,8 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
       );
     }
 
-    const config = await readConfig();
     const concurrency = parseInt(
-      process.env.CONCURRENCY || config.concurrency || 3,
+      process.env.CONCURRENCY || 3,
     );
 
     // const fetchOptions = {};
@@ -350,9 +352,10 @@ const get_widen_content_controller = async (req, res) => {
 
     console.log('--------start------')
     console.log('limit and offset: ', { limit, offset })
-    const state = await readWidenState();
-    console.log('limit and offset: ', { offset: state.widenOffset, limit: state.batchSize, currentIndex: state.currentIndex })
 
+    const state = await readWidenState();
+
+    console.log('limit and offset: ', { offset: state.widenOffset, limit: state.batchSize, currentIndex: state.currentIndex })
 
     if (state.batchComplete || state.items.length === 0) {  // if batch is completed
       const { assets, totalCount } = await fetchWidenAssetsWithPagination(
@@ -369,7 +372,6 @@ const get_widen_content_controller = async (req, res) => {
     }
 
     const asset = state.items[state.currentIndex];
-
 
     // Defensive check
     if (!asset) {
@@ -421,7 +423,17 @@ const get_widen_content_controller = async (req, res) => {
     console.log('totalCount-----', state.totalCount)
     console.log('completed: ', isContentAvailable)
 
-    console.log
+    if (!isContentAvailable) {
+
+      const errors = await AssetError.find({}).lean()
+      console.log('errors: ', errors.length)
+    
+      if (errors || errors.length >= 1) {
+        const exelPath = createExcelFile(errors)
+        await sendEmailWithAttachment(exelPath)
+      }
+    }
+
     return res.json({
       data: formattedData,
       isContentAvailable: isContentAvailable

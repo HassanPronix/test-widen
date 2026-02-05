@@ -5,10 +5,7 @@ const MONGO_URI = process.env.MONGO_URI; // replace with your URI
 
 async function connectDB() {
   if (mongoose.connection.readyState === 0) {
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(MONGO_URI);
     console.log("Connected to MongoDB");
   }
 }

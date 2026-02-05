@@ -428,7 +428,7 @@ const get_widen_content_controller = async (req, res) => {
       const errors = await AssetError.find({}).lean()
       console.log('errors: ', errors.length)
     
-      if (errors || errors.length >= 1) {
+      if (!errors || errors.length >= 1) {
         const exelPath = createExcelFile(errors)
         await sendEmailWithAttachment(exelPath)
       }

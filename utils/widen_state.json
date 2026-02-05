@@ -1,0 +1,8 @@
+{
+  "widenOffset": 0,
+  "batchSize": 30,
+  "currentIndex": 0,
+  "items": [],
+  "batchComplete": true,
+  "totalCount": 0
+}

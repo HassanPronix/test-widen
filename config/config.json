@@ -1,0 +1,50 @@
+{
+  "name": "customOAuth2Connector",
+  "type": "customConnector",
+  "authDetails": {
+    "authorizationType": "OAuth2ClientCredentials",
+    "clientId": "02a932511c55462cbe6fec6bc303c147",
+    "clientSecret": "yleX8PMZOgYBSnyXclEvalQT4olEEI4X",
+    "tokenUrl": "https://platform.app.simpplr.com/v1/identity/oauth/token",
+    "scope": "optional_scope_if_required"
+  },
+  "configuration": {
+    "api": {
+      "contentUrl": "https://platform.app.simpplr.com/v1/b2b/content/files/list",
+      "method": "POST"
+    },
+    "pagination": {
+      "limit": "size",
+      "offset": "nextPageToken"
+    },
+    "lookupFields": {
+      "rootField": "listOfItems",
+      "id": "id",
+      "title": "title",
+      "content": "content",
+      "url": "url",
+      "signedUrl": "signedDownloadUrl",
+      "createdOn": "created_at",
+      "updatedOn": "updated_at",
+      "type": "type",
+      "sys_racl": "permissions"
+    },
+    "hasMore": "nextPageToken"
+  },
+  "widen": {
+    "searchUrl": "https://api.widencollective.com/v2/assets/search",
+    "query": "mt:({_Manuals & QSG (LS)})",
+    "limit": 15,
+    "offset": 0,
+    "downloadTimeout": 120000,
+    "userAgent": "kore-widen-connector-poc/1.0"
+  },
+  "kore": {
+    "host": "https://platform.kore.ai",
+    "sourceName": "JBL_WIDEN",
+    "jwtExpiresIn": "30m",
+    "uploadTimeout": 180000,
+    "ingestBatchSize": 15
+  },
+  "concurrency": 3
+}

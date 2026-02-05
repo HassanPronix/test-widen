@@ -1,0 +1,76 @@
+{
+    "data": [
+        {
+            "id": "06eafa3bc3ab3510d1b77aef050131d3",
+            "title": "Two-Factor Authentication for SAP Concur",
+            "content": "<p><strong><span style=\"font-size: 12pt;\">Two-Factor Authentication for SAP Concur</span></strong></p>\r\n<p> </p>\r\n<p><span style=\"font-size: 8pt;\">This is information from the SAP Concur FAQ</span></p>\r\n<p>As of October 18, 2023, all users who employ basic authentication (entering an SAP Concur username and password) when signing in at <a href=\"http://www.concursolutions.com/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">www.concursolutions.com</a> on web or on the mobile app will be required to set up two-factor authentication (2FA) at the time of their next sign in.</p>\r\n<p>The links below are resources to help you get 2FA set up and signed in.</p>\r\n<p> </p>\r\n<p><a href=\"https://dam.sap.com/mac/app/p/pdf/asset/preview/FrhUmfQ?ltr&#61;a&amp;rc&#61;10\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Two-Factor Setup Guide for End Users</a></p>\r\n<p> </p>\r\n<p><a href=\"https://dam.sap.com/mac/u/a/kA9GcJq.htm?rc&#61;10\" target=\"_self\" rel=\"noopener noreferrer nofollow\">2FA FAQs</a></p>\r\n<p> </p>\r\n<p><a href=\"https://microlearning.opensap.com/media/Signing&#43;in&#43;to&#43;SAP&#43;Concur/1_1qvk1e82\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Signing In to SAP Concur Desktop With 2FA Demo Video</a> </p>\r\n<p> </p>\r\n<p><a href=\"https://microlearning.opensap.com/media/1_8rh6s6kl\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Signing In to SAP Concur Mobile (iPhone Demo Video)</a></p>\r\n<p> </p>\r\n<p><a href=\"https://microlearning.opensap.com/media/1_07tka82t\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Signing In to SAP Concur Mobile (Android Demo Video)</a></p>\r\n<p> </p>\r\n<div id=\"anchor1\"></div>\r\n<p><span style=\"box-sizing: border-box; text-decoration: underline;\"><strong>Why 2FA?</strong></span></p>\r\n<p>In today&#39;s digital landscape, security is of utmost concern, and we are committed to safeguarding your sensitive information and personal data. Two-Factor Authentication is a robust and proven method that significantly enhances the security of your accounts. Reputations are valuable assets, and if a security incident happens, it can tarnish an image in the eyes of customers, partners, and the general public. We know that your confidence in our ability to safeguard your data is crucial. We want to reassure you that we are investing in stronger security measures and continuously monitoring and improving our systems by bring 2FA to your accounts. There are more than <a target=\"_self\">24 billion usernames and passwords</a> on the dark web as of June 2022. Hackers are getting smarter every day and username/passwords are vulnerable to risk of unauthorized access, brute force attacks, various cyber threats, such as phishing, credential stuffing, password breaches and can be stolen by third parties. Enforcing the use of a 2FA significantly reduces the risk of unauthorized access and increases confidence that your accounts will stay safe from cyber criminals.</p>\r\n<p> </p>",
+            "url": "",
+            "type": "kb_knowledge",
+            "createdOn": "2024-01-12 13:11:58",
+            "updatedOn": "2024-01-12 13:14:30",
+            "rawData": {
+                "short_description": "Two-Factor Authentication for SAP Concur",
+                "roles": "",
+                "wiki": null,
+                "direct": "false",
+                "rating": "",
+                "description": "",
+                "generated_with_now_assist": "false",
+                "source": "",
+                "sys_updated_on": "2024-01-12 13:14:30",
+                "disable_suggesting": "false",
+                "sys_class_name": "kb_knowledge",
+                "number": "KB0010007",
+                "sys_id": "06eafa3bc3ab3510d1b77aef050131d3",
+                "use_count": "0",
+                "sys_updated_by": "cswartz",
+                "flagged": "false",
+                "disable_commenting": "false",
+                "sys_created_on": "2024-01-12 13:11:58",
+                "sys_domain": {
+                    "link": "https://ven06090.service-now.com/api/now/table/sys_user_group/global",
+                    "value": "global"
+                },
+                "valid_to": "2100-01-01",
+                "retired": "",
+                "workflow_state": "published",
+                "text": "<p><strong><span style=\"font-size: 12pt;\">Two-Factor Authentication for SAP Concur</span></strong></p>\r\n<p> </p>\r\n<p><span style=\"font-size: 8pt;\">This is information from the SAP Concur FAQ</span></p>\r\n<p>As of October 18, 2023, all users who employ basic authentication (entering an SAP Concur username and password) when signing in at <a href=\"http://www.concursolutions.com/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">www.concursolutions.com</a> on web or on the mobile app will be required to set up two-factor authentication (2FA) at the time of their next sign in.</p>\r\n<p>The links below are resources to help you get 2FA set up and signed in.</p>\r\n<p> </p>\r\n<p><a href=\"https://dam.sap.com/mac/app/p/pdf/asset/preview/FrhUmfQ?ltr&#61;a&amp;rc&#61;10\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Two-Factor Setup Guide for End Users</a></p>\r\n<p> </p>\r\n<p><a href=\"https://dam.sap.com/mac/u/a/kA9GcJq.htm?rc&#61;10\" target=\"_self\" rel=\"noopener noreferrer nofollow\">2FA FAQs</a></p>\r\n<p> </p>\r\n<p><a href=\"https://microlearning.opensap.com/media/Signing&#43;in&#43;to&#43;SAP&#43;Concur/1_1qvk1e82\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Signing In to SAP Concur Desktop With 2FA Demo Video</a> </p>\r\n<p> </p>\r\n<p><a href=\"https://microlearning.opensap.com/media/1_8rh6s6kl\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Signing In to SAP Concur Mobile (iPhone Demo Video)</a></p>\r\n<p> </p>\r\n<p><a href=\"https://microlearning.opensap.com/media/1_07tka82t\" target=\"_self\" rel=\"noopener noreferrer nofollow\">Signing In to SAP Concur Mobile (Android Demo Video)</a></p>\r\n<p> </p>\r\n<div id=\"anchor1\"></div>\r\n<p><span style=\"box-sizing: border-box; text-decoration: underline;\"><strong>Why 2FA?</strong></span></p>\r\n<p>In today&#39;s digital landscape, security is of utmost concern, and we are committed to safeguarding your sensitive information and personal data. Two-Factor Authentication is a robust and proven method that significantly enhances the security of your accounts. Reputations are valuable assets, and if a security incident happens, it can tarnish an image in the eyes of customers, partners, and the general public. We know that your confidence in our ability to safeguard your data is crucial. We want to reassure you that we are investing in stronger security measures and continuously monitoring and improving our systems by bring 2FA to your accounts. There are more than <a target=\"_self\">24 billion usernames and passwords</a> on the dark web as of June 2022. Hackers are getting smarter every day and username/passwords are vulnerable to risk of unauthorized access, brute force attacks, various cyber threats, such as phishing, credential stuffing, password breaches and can be stolen by third parties. Enforcing the use of a 2FA significantly reduces the risk of unauthorized access and increases confidence that your accounts will stay safe from cyber criminals.</p>\r\n<p> </p>",
+                "sys_created_by": "cswartz",
+                "display_attachments": "false",
+                "image": "",
+                "sys_view_count": "5",
+                "article_type": "text",
+                "cmdb_ci": "",
+                "author": {
+                    "link": "https://ven06090.service-now.com/api/now/table/sys_user/940d860b47932510b00ec43d026d4336",
+                    "value": "940d860b47932510b00ec43d026d4336"
+                },
+                "can_read_user_criteria": "",
+                "sys_mod_count": "2",
+                "active": "true",
+                "cannot_read_user_criteria": "",
+                "published": "2024-01-12",
+                "helpful_count": "0",
+                "sys_domain_path": "/",
+                "sys_tags": "",
+                "instrumentation_metadata": "",
+                "replacement_article": "",
+                "meta_description": "Two-Factor Authentication for SAP Concur   This is information from the SAP Concur FAQ As of October",
+                "taxonomy_topic": "",
+                "kb_knowledge_base": {
+                    "link": "https://ven06090.service-now.com/api/now/table/kb_knowledge_base/a7e8a78bff0221009b20ffffffffff17",
+                    "value": "a7e8a78bff0221009b20ffffffffff17"
+                },
+                "meta": "",
+                "view_as_allowed": "true",
+                "topic": "General",
+                "category": "",
+                "kb_category": {
+                    "link": "https://ven06090.service-now.com/api/now/table/kb_category/845732b7c3ab3510d1b77aef05013150",
+                    "value": "845732b7c3ab3510d1b77aef05013150"
+                }
+            }
+        }
+    ],
+    "isContentAvailable": true
+}

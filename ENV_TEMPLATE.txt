@@ -1,0 +1,41 @@
+# ===========================================
+# ENVIRONMENT VARIABLES TEMPLATE
+# ===========================================
+# Copy this content to a .env file in the same directory
+# and fill in your actual values.
+# ===========================================
+
+# ===========================================
+# Connector Authorization (for SearchAssist to call this connector)
+# ===========================================
+Authorization=your-connector-auth-token
+
+# ===========================================
+# WIDEN DAM Configuration
+# ===========================================
+WIDEN_BEARER=your-widen-bearer-token
+WIDEN_SEARCH_URL=https://api.widencollective.com/v2/assets/search
+WIDEN_QUERY=mt:({_Manuals & QSG (LS)})
+WIDEN_LIMIT=15
+WIDEN_OFFSET=0
+
+# ===========================================
+# KORE.AI SearchAI Configuration
+# ===========================================
+KORE_HOST=https://platform.kore.ai
+KORE_BOT_ID=st-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+KORE_CLIENT_ID=cs-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+KORE_CLIENT_SECRET=your-xo-app-client-secret
+SEARCHAI_SOURCE_NAME=JBL_WIDEN_POC
+
+# Optional: If you have a specific source ID from SearchAI
+# KORE_SOURCE_ID=src-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+# ===========================================
+# Processing Configuration
+# ===========================================
+CONCURRENCY=3
+PORT=3232
+
+# Max file size in MB for upload (Kore.ai typically limits to 25-50 MB)
+MAX_FILE_SIZE_MB=25

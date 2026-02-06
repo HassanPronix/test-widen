@@ -195,7 +195,7 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
 
     for (const result of processingResults) {
       if (result.success) {
-        if (true) {
+        if (result.result.skipped) {
           results.skipped++;
           results.itemStatus.push(result.result.itemStatus);
           const s = result.result.itemStatus || {};

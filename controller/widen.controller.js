@@ -143,7 +143,7 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
 
         // to test large file size
         const pdfBuffer = await downloadWidenPDF(
-          'https://orders-bb.us-east-1.widencdn.net/download-deferred/originals?actor=wrn%3Ausers%3Auser%3A29055826%3Aab7gjx&tracking=ewogICJkb19ub3RfdHJhY2siOiBmYWxzZSwKICAiYW5vbnltb3VzIjogZmFsc2UsCiAgInZpc2l0b3JfaWQiOiBudWxsLAogICJ1c2VyX3dybiI6ICJ3aWRlbjp1c2Vyczp1c2VyOkhBUk1BOmFiN2dqeCIKfQ%3D%3D&asset_wrn=wrn%3Aassets%3Aasset%3A29055826%3Arj4ozn0pm6&custom_metadata=ewogICJhcHBfbmFtZSI6ICJheGlvbSIsCiAgImludGVuZGVkX3VzZV9jb2RlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX3ZhbHVlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX2VtYWlsIjogbnVsbCwKICAiY29sbGVjdGlvbl9pZCI6IG51bGwsCiAgInBvcnRhbF9pZCI6IG51bGwsCiAgInBvcnRhbF9hY2Nlc3NfY29kZV9lbWFpbCI6IG51bGwsCiAgImRhbV9vcmRlcl9pZCI6IG51bGwKfQ%3D%3D&Expires=1770415200&Signature=D1RKfGwKsaWHseQMyCXaAeKugaoDRox6OOlaadNY9~dk~F0wz4rB9T1QB6Lf~eCded-8gk1raqZtPIobu7~5ALXoC8t2O1rnN77IjmMKeciOlelpi2WVJkZgM3jrONKqpyR2sDUtosrEFTZRkmHATF4a8pYFILs4UGADew9WZ0dYWScKWz~KkzrKlcq29x0kO9v0mIZwT05aN6REJSFxMOsTyZdDsvzX9jnXPoWqbFX1mubxv9jmL5qGLHZwiOMlXyL2wpDN3gcIyqFo0x-rZM2FBapTSIDT8I6lD-~ZK1-MuOthy2ZpqvlqqpiM-Hlw8DVOh3LVErAQd8Vn3Z-t5Q__&Key-Pair-Id=APKAJM7FVRD2EPOYUXBQ',
+          'https://orders-bb.us-east-1.widencdn.net/download-deferred/originals?actor=wrn%3Ausers%3Auser%3A29055826%3Aab7gjx&tracking=ewogICJkb19ub3RfdHJhY2siOiBmYWxzZSwKICAiYW5vbnltb3VzIjogZmFsc2UsCiAgInZpc2l0b3JfaWQiOiBudWxsLAogICJ1c2VyX3dybiI6ICJ3aWRlbjp1c2Vyczp1c2VyOkhBUk1BOmFiN2dqeCIKfQ%3D%3D&asset_wrn=wrn%3Aassets%3Aasset%3A29055826%3Acxaltyix8b&custom_metadata=ewogICJhcHBfbmFtZSI6ICJheGlvbSIsCiAgImludGVuZGVkX3VzZV9jb2RlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX3ZhbHVlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX2VtYWlsIjogbnVsbCwKICAiY29sbGVjdGlvbl9pZCI6IG51bGwsCiAgInBvcnRhbF9pZCI6IG51bGwsCiAgInBvcnRhbF9hY2Nlc3NfY29kZV9lbWFpbCI6IG51bGwsCiAgImRhbV9vcmRlcl9pZCI6IG51bGwKfQ%3D%3D&Expires=1770440400&Signature=C061~QWHdn-QgkDM6jfntPf6weB8xHUBVhgnGGP9N-uZuX~SH8o4FX8y584K2Y2Uh9dNI23w~fpE7amPaqz~HZoZqGgU6n-MUmbLXEZEBmG1-qCyBkO15cIsWONMtL-FZ5jgep6kOKl3MxGevsMk3WmI9gel~x5IaH6wiKK6SFC9Kj2dRnSv5lXgNWHkFCa0-Sx1frXv848hbr~M9I~grpR4UnDp1xh-OlhfVwjx-l55dmLd6STVVdo540POcO4ZV5M~K8XXTQAACT5LwDSMhZpgcfSfYskYyt3f-XbQpWjp4mxfxGUWKMwx66kWloFYSsd-06Go~LHxfQdfp5-nNA__&Key-Pair-Id=APKAJM7FVRD2EPOYUXBQ',
           1,
         );
 
@@ -195,7 +195,7 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
 
     for (const result of processingResults) {
       if (result.success) {
-        if (result.result.skipped) {
+        if (true) {
           results.skipped++;
           results.itemStatus.push(result.result.itemStatus);
           const s = result.result.itemStatus || {};
@@ -359,8 +359,8 @@ const get_widen_content_controller = async (req, res) => {
 
     if (state.batchComplete || state.items.length === 0) {  // if batch is completed
       const { assets, totalCount } = await fetchWidenAssetsWithPagination(
-        state.batchSize,
-        state.widenOffset
+        30,
+        4969
       );
 
       // assets.push(...assets);
@@ -390,21 +390,18 @@ const get_widen_content_controller = async (req, res) => {
       state.widenOffset += state.batchSize; //  real offset update
     }
 
-    const isContentAvailable = ((state.widenOffset + state.batchSize) <= state.totalCount) || !state.batchComplete
+    const isContentAvailable = false
     if (!isContentAvailable) {
-      state.batchComplete = true;
-      state.items = [];
-      state.currentIndex = 0;
-      state.widenOffset = 0
+
     }
 
-    await writeWidenState(state);
+    // await writeWidenState(state);
 
     // const assets = await fetchWidenAssetsWithPagination(limit, offset);
     // await sync_widen_controller(limit, offset);
     await sync_widen_controller([asset], { offset, limit });
 
-    const data = {
+    const formattedData = {
       id: asset.id,
       sys_id: asset.id,
       title: asset.title,
@@ -418,14 +415,16 @@ const get_widen_content_controller = async (req, res) => {
       _widen_external_id: asset.externalId,
       _widen_filename: asset.filename,
       _widen_file_size: asset.fileSize,
-      isContentAvailable: isContentAvailable
     };
 
     console.log('totalCount-----', state.totalCount)
     console.log('completed: ', isContentAvailable)
 
     if (!isContentAvailable) {
-
+      state.batchComplete = true;
+      state.items = [];
+      state.currentIndex = 0;
+      state.widenOffset = 0
       const errors = await AssetError.find({}).lean()
       console.log('errors: ', errors.length)
 
@@ -435,7 +434,11 @@ const get_widen_content_controller = async (req, res) => {
       }
     }
 
-    return res.json(data);
+    return res.json({
+
+      data: [formattedData],
+      isContentAvailable: isContentAvailable
+    });
   } catch (error) {
 
     console.log(error)

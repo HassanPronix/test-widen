@@ -138,7 +138,7 @@ async function ingestFilesToKore(fileIds, sourceName) {
   console.log('-------ingestion ------')
   const koreHost = process.env.KORE_HOST
   const botId = process.env.KORE_BOT_ID;
-  const defaultSourceName = process.env.SEARCHAI_SOURCE_NAME || 'testWidenExcelEmail'
+  const defaultSourceName = process.env.SEARCHAI_SOURCE_NAME || 'WidenExcelEmail'
 
   if (!botId) {
     throw new Error("KORE_BOT_ID environment variable is required");

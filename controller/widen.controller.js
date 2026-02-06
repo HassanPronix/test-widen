@@ -404,7 +404,7 @@ const get_widen_content_controller = async (req, res) => {
     // await sync_widen_controller(limit, offset);
     await sync_widen_controller([asset], { offset, limit });
 
-    const formattedData = {
+    const data = {
       id: asset.id,
       sys_id: asset.id,
       title: asset.title,
@@ -418,6 +418,7 @@ const get_widen_content_controller = async (req, res) => {
       _widen_external_id: asset.externalId,
       _widen_filename: asset.filename,
       _widen_file_size: asset.fileSize,
+      isContentAvailable: isContentAvailable
     };
 
     console.log('totalCount-----', state.totalCount)
@@ -427,17 +428,14 @@ const get_widen_content_controller = async (req, res) => {
 
       const errors = await AssetError.find({}).lean()
       console.log('errors: ', errors.length)
-    
+
       if (!errors || errors.length >= 1) {
         const exelPath = createExcelFile(errors)
         await sendEmailWithAttachment(exelPath)
       }
     }
 
-    return res.json({
-      data: formattedData,
-      isContentAvailable: isContentAvailable
-    });
+    return res.json(data);
   } catch (error) {
 
     console.log(error)

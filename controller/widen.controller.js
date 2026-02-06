@@ -135,17 +135,17 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
 
           return { asset, itemStatus };
         }
-        const pdfBuffer = await downloadWidenPDF(
-          asset.downloadUrl,
-          asset.filename,
-          1,
-        );
-
-        // to test large file size
         // const pdfBuffer = await downloadWidenPDF(
-        //   'https://orders-bb.us-east-1.widencdn.net/download-deferred/originals?actor=wrn%3Ausers%3Auser%3A29055826%3Aab7gjx&tracking=ewogICJkb19ub3RfdHJhY2siOiBmYWxzZSwKICAiYW5vbnltb3VzIjogZmFsc2UsCiAgInZpc2l0b3JfaWQiOiBudWxsLAogICJ1c2VyX3dybiI6ICJ3aWRlbjp1c2Vyczp1c2VyOkhBUk1BOmFiN2dqeCIKfQ%3D%3D&asset_wrn=wrn%3Aassets%3Aasset%3A29055826%3Abuyxi9iin4&custom_metadata=ewogICJhcHBfbmFtZSI6ICJheGlvbSIsCiAgImludGVuZGVkX3VzZV9jb2RlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX3ZhbHVlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX2VtYWlsIjogbnVsbCwKICAiY29sbGVjdGlvbl9pZCI6IG51bGwsCiAgInBvcnRhbF9pZCI6IG51bGwsCiAgInBvcnRhbF9hY2Nlc3NfY29kZV9lbWFpbCI6IG51bGwsCiAgImRhbV9vcmRlcl9pZCI6IG51bGwKfQ%3D%3D&Expires=1770328800&Signature=bLN81xVZa2wVWG1OB3w9a2my6f3xUaygCzQhJoB92d5OJqGxJm8koNLOhhTnWroGWqymF4crcu9ivsIx-04KCg8SFLEBvILzRZQa9wGzmf1VxMCrmQXH1XvDG5kzSHl8XWJpQSRxQYaChLUKfBASgJRP9EFmg-cA0XHC7bXemhxLipIPCkmtbri-y9d7yHXqS-aO~K9gxctAQMshu0ZyiO0Rz827kk7m5uHFdv9u4fLlJSFEXfUsYVlFL6h7HW7lfe~~9TNZHzRDV2U6TvPyUMMUgPCdD8PYRhZDMWLa5WntML7-cV5NeWWn81yofp0ZFHHGPtc0xqgQgIkFmav40g__&Key-Pair-Id=APKAJM7FVRD2EPOYUXBQ',
+        //   asset.downloadUrl,
+        //   asset.filename,
         //   1,
         // );
+
+        // to test large file size
+        const pdfBuffer = await downloadWidenPDF(
+          'https://orders-bb.us-east-1.widencdn.net/download-deferred/originals?actor=wrn%3Ausers%3Auser%3A29055826%3Aab7gjx&tracking=ewogICJkb19ub3RfdHJhY2siOiBmYWxzZSwKICAiYW5vbnltb3VzIjogZmFsc2UsCiAgInZpc2l0b3JfaWQiOiBudWxsLAogICJ1c2VyX3dybiI6ICJ3aWRlbjp1c2Vyczp1c2VyOkhBUk1BOmFiN2dqeCIKfQ%3D%3D&asset_wrn=wrn%3Aassets%3Aasset%3A29055826%3Arj4ozn0pm6&custom_metadata=ewogICJhcHBfbmFtZSI6ICJheGlvbSIsCiAgImludGVuZGVkX3VzZV9jb2RlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX3ZhbHVlIjogbnVsbCwKICAiaW50ZW5kZWRfdXNlX2VtYWlsIjogbnVsbCwKICAiY29sbGVjdGlvbl9pZCI6IG51bGwsCiAgInBvcnRhbF9pZCI6IG51bGwsCiAgInBvcnRhbF9hY2Nlc3NfY29kZV9lbWFpbCI6IG51bGwsCiAgImRhbV9vcmRlcl9pZCI6IG51bGwKfQ%3D%3D&Expires=1770415200&Signature=D1RKfGwKsaWHseQMyCXaAeKugaoDRox6OOlaadNY9~dk~F0wz4rB9T1QB6Lf~eCded-8gk1raqZtPIobu7~5ALXoC8t2O1rnN77IjmMKeciOlelpi2WVJkZgM3jrONKqpyR2sDUtosrEFTZRkmHATF4a8pYFILs4UGADew9WZ0dYWScKWz~KkzrKlcq29x0kO9v0mIZwT05aN6REJSFxMOsTyZdDsvzX9jnXPoWqbFX1mubxv9jmL5qGLHZwiOMlXyL2wpDN3gcIyqFo0x-rZM2FBapTSIDT8I6lD-~ZK1-MuOthy2ZpqvlqqpiM-Hlw8DVOh3LVErAQd8Vn3Z-t5Q__&Key-Pair-Id=APKAJM7FVRD2EPOYUXBQ',
+          1,
+        );
 
         const fileSizeMB = pdfBuffer.length / 1024 / 1024;
         console.log('----filesSize----', fileSizeMB)

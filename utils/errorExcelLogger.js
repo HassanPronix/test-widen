@@ -1,8 +1,9 @@
 // appendErrorRow.js
+const connectDB = require("../config/connectDB");
 const AssetError = require("../model/asset.model");
 
 async function appendErrorRow(row) {
-
+  await connectDB()
   const normalized = {
     id: row.id || "",
     fileId: row.fileId || "",
@@ -14,6 +15,7 @@ async function appendErrorRow(row) {
 
   try {
     const doc = new AssetError(normalized);
+    console.log(doc)
     await doc.save();
     // optional: console.log("Logged error to MongoDB:", normalized.id);
   } catch (err) {

@@ -391,13 +391,17 @@ const get_widen_content_controller = async (req, res) => {
       state.currentIndex = 0;
       state.widenOffset += state.batchSize; //  real offset update
     }
-
-    const isContentAvailable = false
+    
+    const isContentAvailable = ((state.widenOffset + state.batchSize) <= state.totalCount) || !state.batchComplete
     if (!isContentAvailable) {
-
+      state.batchComplete = true;
+      state.items = [];
+      state.currentIndex = 0;
+      state.widenOffset = 0
     }
 
-    // await writeWidenState(state);
+
+    await writeWidenState(state);
 
     // const assets = await fetchWidenAssetsWithPagination(limit, offset);
     // await sync_widen_controller(limit, offset);

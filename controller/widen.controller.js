@@ -30,6 +30,7 @@ const { appendErrorRow } = require('../utils/errorExcelLogger');
 const AssetError = require('../model/asset.model');
 const { createExcelFile } = require('../utils/createExcel');
 const { sendEmailWithAttachment } = require('../utils/sendEmail');
+const { connectDB } = require('../config/connectDB');
 
 // Max file size for Kore.ai upload (in MB) - can be overridden via env
 const MAX_FILE_SIZE_MB = parseInt(
@@ -426,6 +427,8 @@ const get_widen_content_controller = async (req, res) => {
       state.items = [];
       state.currentIndex = 0;
       state.widenOffset = 0
+      
+      await connectDB()
       const errors = await AssetError.find({}).lean()
       console.log('errors: ', errors.length)
 

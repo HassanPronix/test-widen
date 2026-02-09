@@ -1,8 +1,10 @@
 // appendErrorRow.js
 const AssetError = require("../model/asset.model");
+const {connectDB} = require('../config/connectDB')
+
 
 async function appendErrorRow(row) {
-  // await connectDB()
+  await connectDB()
   const normalized = {
     id: row.id || "",
     fileId: row.fileId || "",

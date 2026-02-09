@@ -1,7 +1,7 @@
 const XLSX = require("xlsx");
 const path = require("path");
 
-const EXCEL_PATH = path.join(__dirname, "asset_errors.xlsx");
+const EXCEL_PATH = path.join("/tmp/asset_errors.xlsx");
 
 function createExcelFile(errors) {
     const worksheet = XLSX.utils.json_to_sheet(errors);

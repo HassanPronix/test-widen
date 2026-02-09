@@ -155,6 +155,7 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
           // Normal upload
           fileId = await uploadFileToKore(pdfBuffer, asset.filename)
           fileIds.push(fileId)
+          await sleep(1500);
 
         } else {
           // Split and upload
@@ -168,7 +169,7 @@ const sync_widen_controller = async (assetsToProcess, configOverrides = {}) => {
             // fs.writeFileSync(chunkFileName, chunk.buffer);   // testing
             fileId = await uploadFileToKore(chunk.buffer, chunkFileName);
             fileIds.push(fileId);
-            await sleep(500);
+            await sleep(1500);
           }
         }
 

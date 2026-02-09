@@ -18,7 +18,7 @@ async function appendErrorRow(row) {
     await doc.save();
     // optional: console.log("Logged error to MongoDB:", normalized.id);
   } catch (err) {
-    console.error("Failed to append to MongoDB:", err.message);
+    console.error("Failed to append to MongoDB:", err);
   }
 }
 

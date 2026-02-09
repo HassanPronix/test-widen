@@ -51,7 +51,7 @@ app.use(content_endpoint)
 
 // Route to Widen sync API
 const widen_endpoint = require('./routes/widen.route.js');
-const connectDB = require('./config/connectDB.js');
+const {connectDB} = require('./config/connectDB.js');
 app.use(widen_endpoint)
 
 const PORT = process.env.PORT || 9000;
